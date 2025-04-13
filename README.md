@@ -2,29 +2,17 @@
 
 BuildR is an Android application that helps users create and manage PC configurations.
 
-## Second Milestone Completed!
+## Latest Updates: Second Milestone Completed!
 
-The second milestone for the BuildR app has been successfully completed. The following features are now implemented:
+The BuildR app has progressed significantly with the following new features and improvements:
 
-- Firebase Firestore integration for storing and retrieving PC configurations
-- Configuration builder interface for creating custom PC builds
-- User-specific configuration management (view, create, edit, delete)
-- Secure permission checks for configuration operations
-- Swipe-to-delete functionality with confirmation
-- Improved UI with support for empty states
-- Pull-to-refresh for configuration updates
-
-## First Milestone Completed!
-
-The first milestone for the BuildR app has been successfully completed. The following features are now implemented:
-
-- Basic application structure and navigation
-- User interface with Material Design components
-- Model classes for all PC components (CPU, GPU, RAM, etc.)
-- Firebase authentication integration
-- Initial screens (login, registration, main screen)
-- Notification system with proper icon
-- Project documentation
+- **Component Selection**: Users can now browse and add CPUs, GPUs, and RAM to their configurations
+- **Real-time Price Calculation**: Total price updates automatically as components are added
+- **Power Consumption Estimation**: Estimated wattage is calculated based on component TDP values
+- **Enhanced UI**: Polished user interface with Material Design components throughout the app
+- **Configuration Builder**: Complete workflow for creating, editing, and saving configurations
+- **Firestore Integration**: Configurations are saved to Firestore with proper permission controls
+- **Back Navigation**: Added proper back button navigation throughout the app
 
 ## Building the Application
 
@@ -55,23 +43,38 @@ app/build/outputs/apk/debug/app-debug.apk
 
 ## Project Structure
 
-- `app/src/main/java/com/markingo/buildr/model/` - Model classes
-- `app/src/main/java/com/markingo/buildr/ui/` - UI components
-- `app/src/main/java/com/markingo/buildr/util/` - Utility classes including FirestoreUtil
-- `app/src/main/res/` - Resources (layouts, strings, colors, etc.)
+- `app/src/main/java/com/markingo/buildr/model/` - Model classes for components and configurations
+- `app/src/main/java/com/markingo/buildr/ui/` - UI components and activities
+- `app/src/main/java/com/markingo/buildr/util/` - Utility classes and Firebase helpers
+- `app/src/main/res/` - Resources (layouts, strings, colors, drawables, etc.)
 
 ## Technologies Used
 
 - Java for Android development
 - Firebase Authentication for user management
-- Firestore for data storage and retrieval
-- Material Design components for UI
-- RecyclerView with SwipeRefreshLayout
-- Custom adapters for list management
+- Firestore for cloud data storage
+- Material Design components for modern UI
+- RecyclerView for efficient list displays
+- Fragment-based navigation
+- Vector drawables for crisp icons at any resolution
+
+## Key Features
+
+- **User Authentication**: Secure login and registration system
+- **Configuration Management**: Create, edit, and delete PC configurations
+- **Component Selection**: Browse and select from various PC components
+- **Price Tracking**: Real-time calculation of total price as components are added
+- **Power Estimation**: Estimated power consumption based on component specifications
+- **Responsive Design**: Works across different Android device sizes
 
 ## Future Development
 
-The next phase will focus on component compatibility checking, price calculation, and configuration sharing features.
+Future milestones will focus on:
+- Compatibility checking between components
+- More detailed component specifications
+- Configuration sharing features
+- Performance benchmarks estimation
+- Extended component database
 
 ## License
 
