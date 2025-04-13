@@ -169,6 +169,7 @@ public class ComponentPickerActivity extends AppCompatActivity {
                     cpu1.setBaseClock(3.6);
                     cpu1.setTdpWatts(125);
                     cpu1.setType(ComponentType.CPU);
+                    cpu1.setImageUrl("file:///android_asset/images/12700K.jpg");
                     components.add(cpu1);
                     
                     CPU cpu2 = new CPU();
@@ -182,6 +183,7 @@ public class ComponentPickerActivity extends AppCompatActivity {
                     cpu2.setBaseClock(3.7);
                     cpu2.setTdpWatts(65);
                     cpu2.setType(ComponentType.CPU);
+                    cpu2.setImageUrl("file:///android_asset/images/5600x.jpg");
                     components.add(cpu2);
                     
                     CPU cpu3 = new CPU();
@@ -195,6 +197,7 @@ public class ComponentPickerActivity extends AppCompatActivity {
                     cpu3.setBaseClock(3.4);
                     cpu3.setTdpWatts(105);
                     cpu3.setType(ComponentType.CPU);
+                    cpu3.setImageUrl("file:///android_asset/images/5800x3d.png");
                     components.add(cpu3);
                     break;
                     
@@ -209,6 +212,7 @@ public class ComponentPickerActivity extends AppCompatActivity {
                     gpu1.setMemoryType("GDDR6X");
                     gpu1.setTdpWatts(200);
                     gpu1.setType(ComponentType.GPU);
+                    gpu1.setImageUrl("file:///android_asset/images/rtx4070.png");
                     components.add(gpu1);
                     
                     GPU gpu2 = new GPU();
@@ -220,6 +224,7 @@ public class ComponentPickerActivity extends AppCompatActivity {
                     gpu2.setMemoryType("GDDR6");
                     gpu2.setTdpWatts(245);
                     gpu2.setType(ComponentType.GPU);
+                    gpu2.setImageUrl("file:///android_asset/images/7700xt.jpg");
                     components.add(gpu2);
                     break;
                     
@@ -234,6 +239,7 @@ public class ComponentPickerActivity extends AppCompatActivity {
                     ram1.setSpeedMHz(3200);
                     ram1.setMemoryType("DDR4");
                     ram1.setType(ComponentType.RAM);
+                    ram1.setImageUrl("file:///android_asset/images/vengeance.png");
                     components.add(ram1);
                     
                     RAM ram2 = new RAM();
@@ -245,6 +251,7 @@ public class ComponentPickerActivity extends AppCompatActivity {
                     ram2.setSpeedMHz(3600);
                     ram2.setMemoryType("DDR4");
                     ram2.setType(ComponentType.RAM);
+                    ram2.setImageUrl("file:///android_asset/images/tridentz.png");
                     components.add(ram2);
                     break;
                     

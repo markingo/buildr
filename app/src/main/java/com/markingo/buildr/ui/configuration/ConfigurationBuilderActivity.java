@@ -275,9 +275,8 @@ public class ConfigurationBuilderActivity extends AppCompatActivity {
         TextView tvEstimatedWattage = findViewById(R.id.tv_estimated_wattage);
         
         if (tvTotalPrice != null && configuration != null) {
-            String priceText = getString(R.string.total_price, 
-                    NumberFormat.getCurrencyInstance(Locale.US).format(configuration.getTotalPrice()));
-            tvTotalPrice.setText(priceText);
+            String formattedPrice = NumberFormat.getCurrencyInstance(Locale.US).format(configuration.getTotalPrice());
+            tvTotalPrice.setText("Total Price: " + formattedPrice);
         }
         
         if (tvEstimatedWattage != null && configuration != null) {

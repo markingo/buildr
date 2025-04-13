@@ -1,5 +1,6 @@
 package com.markingo.buildr.ui.component;
 
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -88,10 +89,26 @@ public class ComponentAdapter extends RecyclerView.Adapter<ComponentAdapter.Comp
                 // Load image if available
                 String imageUrl = component.getImageUrl();
                 if (imageUrl != null && !imageUrl.isEmpty()) {
-                    Glide.with(itemView.getContext())
-                            .load(imageUrl)
-                            .placeholder(R.drawable.buildr_logo)
-                            .into(ivComponent);
+                    if (imageUrl.startsWith("file:///android_asset/")) {
+                        // Load from assets
+                        String assetPath = imageUrl.replace("file:///android_asset/", "");
+                        try {
+                            Glide.with(itemView.getContext())
+                                 .load(Uri.parse(imageUrl))
+                                 .placeholder(R.drawable.buildr_logo)
+                                 .error(R.drawable.buildr_logo)
+                                 .into(ivComponent);
+                        } catch (Exception e) {
+                            // Fallback to logo if asset can't be loaded
+                            ivComponent.setImageResource(R.drawable.buildr_logo);
+                        }
+                    } else {
+                        // Load from web URL
+                        Glide.with(itemView.getContext())
+                                .load(imageUrl)
+                                .placeholder(R.drawable.buildr_logo)
+                                .into(ivComponent);
+                    }
                 } else {
                     ivComponent.setImageResource(R.drawable.buildr_logo);
                 }

@@ -140,9 +140,8 @@ public class ConfigurationDetailActivity extends AppCompatActivity {
         tvConfigDescription.setText(configuration.getDescription());
         
         // Set total price
-        String priceText = getString(R.string.total_price, 
-                currencyFormat.format(configuration.getTotalPrice()));
-        tvPrice.setText(priceText);
+        String formattedPrice = currencyFormat.format(configuration.getTotalPrice());
+        tvPrice.setText("Total Price: " + formattedPrice);
         
         // Set estimated wattage
         String wattageText = getString(R.string.estimated_wattage, 
