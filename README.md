@@ -2,9 +2,17 @@
 
 BuildR is an Android application that helps users create and manage PC configurations.
 
-## Latest Updates: Second Milestone Completed!
+## Latest Updates: Third Milestone Completed!
 
-The BuildR app has progressed significantly with the following new features and improvements:
+The BuildR app has completed its third milestone with the following new features and improvements:
+
+- **Enhanced Security**: Improved permission controls for configuration management
+- **Git Integration**: Added proper .gitignore settings for sensitive files
+- **Code Refactoring**: Fixed permission check in the deleteConfiguration method
+- **UI Improvements**: Further polished the user interface and navigation flows
+- **Documentation Updates**: Comprehensive README documentation for the project
+
+### Previous Milestone (Second):
 
 - **Component Selection**: Users can now browse and add CPUs, GPUs, and RAM to their configurations
 - **Real-time Price Calculation**: Total price updates automatically as components are added
@@ -17,8 +25,6 @@ The BuildR app has progressed significantly with the following new features and 
 ## Building the Application
 
 To build the application, follow these steps:
-
-1. Clone this repository:
 ```
 git clone https://github.com/markingo/buildr.git
 ```
