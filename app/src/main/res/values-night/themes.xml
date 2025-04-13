@@ -1,0 +1,50 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.BuildR" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/primary_light</item>
+        <item name="colorPrimaryVariant">@color/primary</item>
+        <item name="colorOnPrimary">@color/black</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/secondary_light</item>
+        <item name="colorSecondaryVariant">@color/secondary</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        <!-- Other attributes -->
+        <item name="android:windowBackground">@color/dark_background</item>
+        <item name="android:textColorPrimary">@color/dark_text_primary</item>
+        <item name="android:textColorSecondary">@color/dark_text_secondary</item>
+        <item name="materialCardViewStyle">@style/Widget.BuildR.CardView.Dark</item>
+    </style>
+    
+    <!-- Theme with no action bar, for splash screen and login/register screens -->
+    <style name="Theme.BuildR.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+    
+    <!-- Card view style -->
+    <style name="Widget.BuildR.CardView.Dark" parent="Widget.MaterialComponents.CardView">
+        <item name="cardElevation">4dp</item>
+        <item name="cardCornerRadius">8dp</item>
+        <item name="cardUseCompatPadding">true</item>
+        <item name="contentPadding">12dp</item>
+        <item name="cardBackgroundColor">@color/dark_surface</item>
+    </style>
+    
+    <!-- Text appearance styles -->
+    <style name="TextAppearance.BuildR.Title" parent="TextAppearance.MaterialComponents.Headline5">
+        <item name="android:textColor">@color/dark_text_primary</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    
+    <style name="TextAppearance.BuildR.Subtitle" parent="TextAppearance.MaterialComponents.Subtitle1">
+        <item name="android:textColor">@color/dark_text_secondary</item>
+    </style>
+    
+    <style name="TextAppearance.BuildR.Price" parent="TextAppearance.MaterialComponents.Body1">
+        <item name="android:textColor">@color/price_color</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+</resources>

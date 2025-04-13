@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clickable="true"
+    android:focusable="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_configuration_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:textAppearance="@style/TextAppearance.BuildR.Title"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toStartOf="@+id/tv_price"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Gaming PC Build" />
+
+        <TextView
+            android:id="@+id/tv_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/TextAppearance.BuildR.Price"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="$1,499.99" />
+
+        <TextView
+            android:id="@+id/tv_config_date"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_configuration_name"
+            tools:text="Updated: Apr 10, 2023" />
+
+        <TextView
+            android:id="@+id/tv_component_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_price"
+            tools:text="Components: 7" />
+
+        <LinearLayout
+            android:id="@+id/ll_components"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_config_date">
+
+            <TextView
+                android:id="@+id/tv_cpu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="CPU: Intel Core i7-12700K" />
+
+            <TextView
+                android:id="@+id/tv_gpu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="GPU: NVIDIA RTX 3080" />
+
+            <TextView
+                android:id="@+id/tv_ram"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="RAM: 32GB DDR4 3600MHz" />
+
+            <TextView
+                android:id="@+id/tv_storage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="Storage: 1TB M.2 NVMe SSD" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_estimated_wattage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:drawablePadding="4dp"
+            android:gravity="center_vertical"
+            app:drawableStartCompat="@android:drawable/ic_menu_compass"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ll_components"
+            tools:text="Estimated Wattage: 550W" />
+
+        <TextView
+            android:id="@+id/tv_compatibility"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:drawablePadding="4dp"
+            android:gravity="center_vertical"
+            android:text="@string/compatible"
+            android:textColor="@color/compatible_color"
+            app:drawableStartCompat="@android:drawable/ic_menu_info_details"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ll_components" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_edit"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:minWidth="0dp"
+            android:text="@string/edit"
+            android:textColor="?attr/colorPrimary"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_estimated_wattage" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_share"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:minWidth="0dp"
+            android:text="@string/share"
+            android:textColor="?attr/colorPrimary"
+            app:layout_constraintStart_toEndOf="@+id/btn_edit"
+            app:layout_constraintTop_toBottomOf="@+id/tv_estimated_wattage" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_delete"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:minWidth="0dp"
+            android:text="@string/delete"
+            android:textColor="@color/error"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_compatibility" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView> 

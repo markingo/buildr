@@ -1,0 +1,148 @@
+<resources>
+    <string name="app_name">BuildR</string>
+    
+    <!-- Common -->
+    <string name="loading">Loading…</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="save">Save</string>
+    <string name="delete">Delete</string>
+    <string name="edit">Edit</string>
+    <string name="share">Share</string>
+    <string name="error">Error</string>
+    <string name="success">Success</string>
+    <string name="error_loading">Error loading data</string>
+    <string name="no_date">No date</string>
+    <string name="no_description">No description</string>
+    <string name="component_count">Components: %1$d</string>
+    <string name="edit_configuration">Edit Configuration</string>
+    <string name="retry">Retry</string>
+    <string name="confirm_delete_config">Are you sure you want to delete "%1$s"?</string>
+    <string name="refresh_success">Configurations refreshed</string>
+    
+    <!-- Auth -->
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="login">Login</string>
+    <string name="register">Register</string>
+    <string name="create_account">Create Account</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="no_account">Don\'t have an account? Register</string>
+    <string name="have_account">Already have an account? Login</string>
+    <string name="logout">Logout</string>
+    <string name="login_success">Successfully logged in</string>
+    <string name="register_success">Successfully registered</string>
+    <string name="login_failed">Login failed: %1$s</string>
+    <string name="register_failed">Registration failed: %1$s</string>
+    <string name="password_mismatch">Passwords do not match</string>
+    <string name="field_required">This field is required</string>
+    <string name="invalid_email">Invalid email address</string>
+    <string name="weak_password">Password must be at least 6 characters</string>
+    
+    <!-- Main -->
+    <string name="my_configurations">My Configurations</string>
+    <string name="new_configuration">New Configuration</string>
+    <string name="total_price">Total Price: %1$s</string>
+    <string name="estimated_wattage">Estimated Wattage: %1$d W</string>
+    <string name="compatible">Compatible</string>
+    <string name="incompatible">Incompatible</string>
+    <string name="no_configurations">No configurations yet</string>
+    <string name="create_first_config">Create your first PC</string>
+    <string name="no_components">No components in this category</string>
+    
+    <!-- Component Categories -->
+    <string name="cpu">CPU</string>
+    <string name="gpu">GPU</string>
+    <string name="ram">RAM</string>
+    <string name="motherboard">Motherboard</string>
+    <string name="storage">Storage</string>
+    <string name="psu">PSU</string>
+    <string name="case_">Case</string>
+    <string name="cpu_cooler">CPU Cooler</string>
+    <string name="select_component">Select %1$s</string>
+    <string name="add_component">Add %1$s</string>
+    <string name="change_component">Change %1$s</string>
+    <string name="remove_component">Remove %1$s</string>
+    
+    <!-- Configuration -->
+    <string name="configuration_name">Configuration Name</string>
+    <string name="configuration_description">Description (Optional)</string>
+    <string name="configuration_created">Configuration created successfully</string>
+    <string name="configuration_updated">Configuration updated successfully</string>
+    <string name="configuration_deleted">Configuration deleted</string>
+    <string name="public_config">Make public</string>
+    <string name="private_config">Private</string>
+    <string name="component_details">%1$s Details</string>
+    <string name="compatibility_check">Compatibility Check</string>
+    <string name="config_share_title">Check out my PC build with BuildR!</string>
+    <string name="config_share_text">I built a PC configuration with BuildR: %1$s\n\nTotal Price: %2$s\n\nComponents:\n%3$s</string>
+    
+    <!-- Component Properties -->
+    <string name="brand">Brand</string>
+    <string name="model">Model</string>
+    <string name="price">Price</string>
+    <string name="socket">Socket</string>
+    <string name="cores">Cores</string>
+    <string name="threads">Threads</string>
+    <string name="base_clock">Base Clock</string>
+    <string name="boost_clock">Boost Clock</string>
+    <string name="tdp">TDP</string>
+    <string name="integrated_graphics">Integrated Graphics</string>
+    <string name="vram">VRAM</string>
+    <string name="memory_type">Memory Type</string>
+    <string name="form_factor">Form Factor</string>
+    <string name="memory_slots">Memory Slots</string>
+    <string name="max_memory">Max Memory</string>
+    <string name="capacity">Capacity</string>
+    <string name="speed">Speed</string>
+    <string name="cas_latency">CAS Latency</string>
+    <string name="modules">Modules</string>
+    <string name="interface_type">Interface</string>
+    <string name="read_speed">Read Speed</string>
+    <string name="write_speed">Write Speed</string>
+    <string name="wattage">Wattage</string>
+    <string name="efficiency">Efficiency</string>
+    <string name="modular">Modular</string>
+    <string name="color">Color</string>
+    <string name="supported_motherboards">Supported Motherboards</string>
+    <string name="max_gpu_length">Max GPU Length</string>
+    <string name="max_cooler_height">Max Cooler Height</string>
+    <string name="included_fans">Included Fans</string>
+    <string name="side_panel">Side Panel</string>
+    <string name="fan_size">Fan Size</string>
+    <string name="fan_count">Fan Count</string>
+    <string name="compatible_sockets">Compatible Sockets</string>
+    <string name="cooler_height">Height</string>
+    <string name="noise_level">Noise Level</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    
+    <!-- Notifications -->
+    <string name="notification_channel_name">BuildR Notifications</string>
+    <string name="notification_channel_description">Notifications for the BuildR application</string>
+    <string name="notification_title">BuildR</string>
+    <string name="component_update_notification">New compatible components available!</string>
+    <string name="alarm_permission_required">BuildR needs permission to set reminders. Please enable \"Allow scheduling of exact alarms\" in the upcoming settings screen.</string>
+    
+    <!-- Filter and Sort -->
+    <string name="filter">Filter</string>
+    <string name="sort">Sort</string>
+    <string name="sort_by_price_asc">Price: Low to High</string>
+    <string name="sort_by_price_desc">Price: High to Low</string>
+    <string name="sort_by_name">Name</string>
+    <string name="apply">Apply</string>
+    <string name="reset">Reset</string>
+    <string name="price_range">Price Range</string>
+    <string name="min_price">Min Price</string>
+    <string name="max_price">Max Price</string>
+    <string name="search_hint">Search…</string>
+    
+    <!-- New strings for the delete confirmation dialog -->
+    <string name="delete_confirmation_title">Delete Configuration</string>
+    <string name="delete_confirmation_message">Are you sure you want to delete \"%s\"?</string>
+    <string name="delete_success">Successfully deleted \"%s\"</string>
+    <string name="delete_error">Error deleting configuration: %s</string>
+    
+    <string name="add_configuration">Add Configuration</string>
+</resources>

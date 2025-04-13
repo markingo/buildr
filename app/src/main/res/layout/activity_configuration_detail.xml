@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.configuration.ConfigurationDetailActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:clipToPadding="false"
+        android:paddingBottom="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/ll_buttons"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/tv_config_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.BuildR.Title"
+                android:textSize="24sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Gaming PC Build" />
+
+            <TextView
+                android:id="@+id/tv_config_description"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:textAppearance="@style/TextAppearance.BuildR.Subtitle"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_config_name"
+                tools:text="High-performance gaming PC with RGB lighting" />
+
+            <TextView
+                android:id="@+id/tv_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:textAppearance="@style/TextAppearance.BuildR.Price"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_config_description"
+                tools:text="Total Price: $1,499.99" />
+
+            <TextView
+                android:id="@+id/tv_wattage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:textAppearance="@style/TextAppearance.BuildR.Subtitle"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_price"
+                tools:text="Estimated Wattage: 550W" />
+
+            <TextView
+                android:id="@+id/tv_compatibility"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@color/compatible_color"
+                android:paddingStart="8dp"
+                android:paddingTop="4dp"
+                android:paddingEnd="8dp"
+                android:paddingBottom="4dp"
+                android:text="@string/compatible"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_wattage" />
+
+            <TextView
+                android:id="@+id/tv_components_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="Components"
+                android:textAppearance="@style/TextAppearance.BuildR.Title"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_compatibility" />
+
+            <TextView
+                android:id="@+id/tv_cpu"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="?attr/selectableItemBackground"
+                android:drawableStart="@android:drawable/ic_menu_preferences"
+                android:drawablePadding="8dp"
+                android:padding="8dp"
+                android:textAppearance="@style/TextAppearance.BuildR.Subtitle"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_components_title"
+                tools:text="CPU: Intel Core i7-12700K (12 cores/20 threads, LGA1700 socket)" />
+
+            <TextView
+                android:id="@+id/tv_gpu"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="?attr/selectableItemBackground"
+                android:drawableStart="@android:drawable/ic_menu_preferences"
+                android:drawablePadding="8dp"
+                android:padding="8dp"
+                android:textAppearance="@style/TextAppearance.BuildR.Subtitle"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_cpu"
+                tools:text="GPU: NVIDIA GeForce RTX 3080 (10GB GDDR6X)" />
+
+            <TextView
+                android:id="@+id/tv_ram"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="?attr/selectableItemBackground"
+                android:drawableStart="@android:drawable/ic_menu_preferences"
+                android:drawablePadding="8dp"
+                android:padding="8dp"
+                android:textAppearance="@style/TextAppearance.BuildR.Subtitle"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_gpu"
+                tools:text="RAM: Corsair Vengeance RGB Pro (32GB DDR4 3600 MHz, 2x16GB)" />
+
+            <TextView
+                android:id="@+id/tv_motherboard"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="?attr/selectableItemBackground"
+                android:drawableStart="@android:drawable/ic_menu_preferences"
+                android:drawablePadding="8dp"
+                android:padding="8dp"
+                android:textAppearance="@style/TextAppearance.BuildR.Subtitle"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_ram"
+                tools:text="Motherboard: ASUS ROG STRIX Z690-E (Z690, LGA1700 socket, ATX)" />
+
+            <TextView
+                android:id="@+id/tv_storage"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="?attr/selectableItemBackground"
+                android:drawableStart="@android:drawable/ic_menu_preferences"
+                android:drawablePadding="8dp"
+                android:padding="8dp"
+                android:textAppearance="@style/TextAppearance.BuildR.Subtitle"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_motherboard"
+                tools:text="Storage: Samsung 970 EVO Plus (1TB SSD, M.2, NVMe)" />
+
+            <TextView
+                android:id="@+id/tv_psu"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="?attr/selectableItemBackground"
+                android:drawableStart="@android:drawable/ic_menu_preferences"
+                android:drawablePadding="8dp"
+                android:padding="8dp"
+                android:textAppearance="@style/TextAppearance.BuildR.Subtitle"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_storage"
+                tools:text="PSU: Corsair RM850x (850W, 80+ Gold, Modular)" />
+
+            <TextView
+                android:id="@+id/tv_case"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="?attr/selectableItemBackground"
+                android:drawableStart="@android:drawable/ic_menu_preferences"
+                android:drawablePadding="8dp"
+                android:padding="8dp"
+                android:textAppearance="@style/TextAppearance.BuildR.Subtitle"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_psu"
+                tools:text="Case: Corsair 4000D Airflow (Mid Tower, Black)" />
+
+            <TextView
+                android:id="@+id/tv_cooler"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="?attr/selectableItemBackground"
+                android:drawableStart="@android:drawable/ic_menu_preferences"
+                android:drawablePadding="8dp"
+                android:padding="8dp"
+                android:textAppearance="@style/TextAppearance.BuildR.Subtitle"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_case"
+                tools:text="CPU Cooler: NZXT Kraken X63 (AIO Liquid, 280mm, 2 fans)" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/ll_buttons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <Button
+            android:id="@+id/btn_edit"
+            style="@style/Widget.BuildR.Button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_weight="1"
+            android:text="@string/edit" />
+
+        <Button
+            android:id="@+id/btn_share"
+            style="@style/Widget.BuildR.Button.OutlinedButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_weight="1"
+            android:text="@string/share" />
+
+        <Button
+            android:id="@+id/btn_delete"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_weight="1"
+            android:text="@string/delete"
+            android:textColor="@color/error" />
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout> 
