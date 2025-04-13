@@ -109,21 +109,53 @@ public class Configuration implements Serializable {
     public int calculateEstimatedWattage() {
         int totalWattage = 0;
         
-        // CPU
+        // Check for CPU wattage
         if (cpu != null) {
             totalWattage += cpu.getTdpWatts();
         }
         
-        // GPU
+        // Check for GPU wattage
         if (gpu != null) {
             totalWattage += gpu.getTdpWatts();
         }
         
+        // Add wattage from all generic components using their specs map
+        if (components != null) {
+            for (Map.Entry<String, Component> entry : components.entrySet()) {
+                Component component = entry.getValue();
+                // Skip CPU and GPU as they're already counted above
+                if (component instanceof CPU || component instanceof GPU) {
+                    continue;
+                }
+                
+                // Try to get wattage from specs map
+                if (component.getSpecs() != null && component.getSpecs().containsKey("tdpWatts")) {
+                    Object tdpObj = component.getSpec("tdpWatts");
+                    if (tdpObj instanceof Integer) {
+                        totalWattage += (Integer) tdpObj;
+                    } else if (tdpObj instanceof Long) {
+                        totalWattage += ((Long) tdpObj).intValue();
+                    } else if (tdpObj instanceof Double) {
+                        totalWattage += ((Double) tdpObj).intValue();
+                    }
+                }
+            }
+        }
+        
         // Add base wattage for other components (rough estimate)
-        totalWattage += 50; // Motherboard
-        totalWattage += 5;  // RAM
-        totalWattage += 10; // Storage drives (per drive)
-        totalWattage += 5;  // Case fans
+        // Only add these if not already accounted for in components map
+        if (getComponent("motherboard") == null) {
+            totalWattage += 50; // Motherboard
+        }
+        if (getComponent("ram") == null) {
+            totalWattage += 5;  // RAM
+        }
+        if (getStorageIds() == null || getStorageIds().isEmpty()) {
+            totalWattage += 10; // Storage drives
+        }
+        if (getComponent("case") == null) {
+            totalWattage += 5;  // Case fans
+        }
         
         // Add 20% overhead for safety
         return (int)(totalWattage * 1.2);

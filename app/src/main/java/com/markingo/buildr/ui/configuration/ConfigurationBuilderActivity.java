@@ -66,6 +66,10 @@ public class ConfigurationBuilderActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_configuration_builder);
+        
+        // Ensure proper window insets handling
+        getWindow().getDecorView().setSystemUiVisibility(
+                View.SYSTEM_UI_FLAG_LAYOUT_STABLE | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
 
         // Initialize Firebase
         firebaseAuth = FirebaseAuth.getInstance();
@@ -215,6 +219,10 @@ public class ConfigurationBuilderActivity extends AppCompatActivity {
         component.setId(id);
         component.setPrice(price);
         
+        // Set wattage for all component types using specs map
+        component.addSpec("tdpWatts", wattage);
+        
+        // Also set specific fields for known component types
         if (component instanceof CPU) {
             ((CPU) component).setTdpWatts(wattage);
         } else if (component instanceof GPU) {
