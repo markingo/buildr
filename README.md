@@ -2,6 +2,41 @@
 
 BuildR is an Android application that helps users create and manage PC configurations.
 
+## Quick Start (Test the Application)
+
+There are two ways to test the BuildR application:
+
+### Option 1: Download and Install the APK (Recommended)
+
+1. Download the latest APK from the [Releases](https://github.com/markingo/buildr/releases) page
+2. Install it on your Android device (you may need to enable "Install from Unknown Sources" in your settings)
+3. Open the application and start building PC configurations!
+
+### Option 2: Build from Source
+
+To build the application from source, follow these steps:
+```
+git clone https://github.com/markingo/buildr.git
+```
+
+2. Open the project in Android Studio
+
+3. Connect Firebase:
+   - Create a project in Firebase Console
+   - Add your Android app to the Firebase project
+   - Download `google-services.json` and place it in the app module directory
+   - Follow the Firebase setup instructions
+
+4. Build the project using Gradle:
+```
+./gradlew assembleDebug
+```
+
+5. The APK will be generated at:
+```
+app/build/outputs/apk/debug/app-debug.apk
+```
+
 ## Latest Updates: Third Milestone Completed!
 
 The BuildR app has completed its third milestone with the following new features and improvements:
@@ -51,31 +86,6 @@ The BuildR app has completed its third milestone with the following new features
 | CRUD operations | ✅ Create, Read, Update, Delete operations on configurations in `FirestoreUtil.java` |
 | Complex queries | ✅ `getUserConfigurations()` with filters, `getConfiguration()` with security checks, component queries with sorting and filtering |
 | UI quality | ✅ Polished UI with consistent styling, intuitive workflows, and responsive feedback |
-
-## Building the Application
-
-To build the application, follow these steps:
-```
-git clone https://github.com/markingo/buildr.git
-```
-
-2. Open the project in Android Studio
-
-3. Connect Firebase:
-   - Create a project in Firebase Console
-   - Add your Android app to the Firebase project
-   - Download `google-services.json` and place it in the app module directory
-   - Follow the Firebase setup instructions
-
-4. Build the project using Gradle:
-```
-./gradlew assembleDebug
-```
-
-5. The APK will be generated at:
-```
-app/build/outputs/apk/debug/app-debug.apk
-```
 
 ## Project Structure
 
