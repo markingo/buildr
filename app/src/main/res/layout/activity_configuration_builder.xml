@@ -80,20 +80,33 @@
                 android:layout_marginTop="24dp"
                 android:text="Components"
                 android:textAppearance="@style/TextAppearance.BuildR.Title"
-                android:textSize="20sp"
+                android:textColor="?attr/colorPrimary"
+                android:textSize="22sp"
+                android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/til_config_description" />
+
+            <View
+                android:id="@+id/divider"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="8dp"
+                android:background="?android:attr/listDivider"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_components_title" />
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/card_summary"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                app:cardBackgroundColor="@color/cardview_shadow_start_color"
+                app:cardBackgroundColor="@color/cardview_light_background"
                 app:cardCornerRadius="8dp"
+                app:cardElevation="4dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv_components_title">
+                app:layout_constraintTop_toBottomOf="@+id/divider">
 
                 <LinearLayout
                     android:layout_width="match_parent"

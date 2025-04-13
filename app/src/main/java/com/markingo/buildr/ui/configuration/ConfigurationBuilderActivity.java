@@ -280,9 +280,8 @@ public class ConfigurationBuilderActivity extends AppCompatActivity {
         }
         
         if (tvEstimatedWattage != null && configuration != null) {
-            String wattageText = getString(R.string.estimated_wattage, 
-                    configuration.calculateEstimatedWattage());
-            tvEstimatedWattage.setText(wattageText);
+            int wattage = configuration.calculateEstimatedWattage();
+            tvEstimatedWattage.setText("Estimated Wattage: " + wattage + " W");
         }
     }
 

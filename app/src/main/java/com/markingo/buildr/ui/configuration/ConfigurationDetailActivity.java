@@ -144,9 +144,8 @@ public class ConfigurationDetailActivity extends AppCompatActivity {
         tvPrice.setText("Total Price: " + formattedPrice);
         
         // Set estimated wattage
-        String wattageText = getString(R.string.estimated_wattage, 
-                configuration.calculateEstimatedWattage());
-        tvWattage.setText(wattageText);
+        int wattage = configuration.calculateEstimatedWattage();
+        tvWattage.setText("Estimated Wattage: " + wattage + " W");
         
         // Set compatibility status
         boolean isCompatible = configuration.checkCompatibility();
