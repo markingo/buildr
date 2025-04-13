@@ -1,6 +1,7 @@
 package com.markingo.buildr.ui.configuration;
 
 import android.content.Intent;
+import android.content.res.ColorStateList;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -273,6 +274,7 @@ public class ConfigurationBuilderActivity extends AppCompatActivity {
     private void updatePriceAndWattageDisplay() {
         TextView tvTotalPrice = findViewById(R.id.tv_total_price);
         TextView tvEstimatedWattage = findViewById(R.id.tv_estimated_wattage);
+        ProgressBar powerMeter = findViewById(R.id.power_meter);
         
         if (tvTotalPrice != null && configuration != null) {
             String formattedPrice = NumberFormat.getCurrencyInstance(Locale.US).format(configuration.getTotalPrice());
@@ -282,6 +284,20 @@ public class ConfigurationBuilderActivity extends AppCompatActivity {
         if (tvEstimatedWattage != null && configuration != null) {
             int wattage = configuration.calculateEstimatedWattage();
             tvEstimatedWattage.setText("Estimated Wattage: " + wattage + " W");
+            
+            // Update power meter
+            if (powerMeter != null) {
+                powerMeter.setProgress(wattage);
+                
+                // Set color based on wattage
+                if (wattage > 750) {
+                    powerMeter.setProgressTintList(ColorStateList.valueOf(getResources().getColor(android.R.color.holo_red_light, null)));
+                } else if (wattage > 500) {
+                    powerMeter.setProgressTintList(ColorStateList.valueOf(getResources().getColor(android.R.color.holo_orange_light, null)));
+                } else {
+                    powerMeter.setProgressTintList(ColorStateList.valueOf(getResources().getColor(android.R.color.holo_green_light, null)));
+                }
+            }
         }
     }
 
@@ -328,6 +344,17 @@ public class ConfigurationBuilderActivity extends AppCompatActivity {
         
         if (name.isEmpty()) {
             etConfigName.setError(getString(R.string.field_required));
+            return;
+        }
+        
+        // Check if any components have been added
+        boolean hasComponents = configuration != null && 
+                                (configuration.getCpuId() != null || 
+                                 configuration.getGpuId() != null || 
+                                 configuration.getRamId() != null);
+        
+        if (!hasComponents) {
+            Toast.makeText(this, "Please add at least one component to your configuration", Toast.LENGTH_SHORT).show();
             return;
         }
         
