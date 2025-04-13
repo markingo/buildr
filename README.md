@@ -6,9 +6,9 @@ BuildR is an Android application that helps users create and manage PC configura
 
 The BuildR app has completed its third milestone with the following new features and improvements:
 
-- **Enhanced Security**: Improved permission controls for configuration management
-- **Git Integration**: Added proper .gitignore settings for sensitive files
-- **Code Refactoring**: Fixed permission check in the deleteConfiguration method
+- **Enhanced Security**: Improved permission controls for configuration management and removed sensitive credentials from Git history
+- **Git Integration**: Added proper .gitignore settings for sensitive files including Firebase admin credentials
+- **Code Refactoring**: Fixed permission check in the deleteConfiguration method ensuring only owners can delete configurations
 - **UI Improvements**: Further polished the user interface and navigation flows
 - **Documentation Updates**: Comprehensive README documentation for the project
 
@@ -21,6 +21,36 @@ The BuildR app has completed its third milestone with the following new features
 - **Configuration Builder**: Complete workflow for creating, editing, and saving configurations
 - **Firestore Integration**: Configurations are saved to Firestore with proper permission controls
 - **Back Navigation**: Added proper back button navigation throughout the app
+
+## Milestone Requirements Implementation
+
+### First Milestone ✅
+
+| Requirement | Implementation Details |
+|-------------|------------------------|
+| No compilation errors | ✅ Project builds successfully with Gradle |
+| No runtime errors | ✅ Application runs stably with robust error handling |
+| Firebase Authentication | ✅ Implemented in `LoginActivity` and `RegisterActivity` with email/password authentication |
+| Input field types | ✅ Password fields use `inputType="textPassword"`, email fields use `inputType="textEmailAddress"` with appropriate keyboard types |
+| Layout types | ✅ `ConstraintLayout` used in all main screens with `LinearLayout` for lists and component layouts |
+| Responsive design | ✅ Layouts adapt to different screen sizes and orientations using constraints, weight, and appropriate dimensions |
+| Animation | ✅ Logo animation in `SplashActivity`, transition animations between activities |
+| Intent navigation | ✅ All activities are accessible via intents (SplashActivity → LoginActivity → MainActivity → Configuration screens) |
+| UI quality | ✅ Material Design principles with custom BuildR theme, consistent typography and spacing |
+
+### Second Milestone ✅
+
+| Requirement | Implementation Details |
+|-------------|------------------------|
+| Data model | ✅ `Configuration` and component models (`CPU`, `GPU`, `RAM`) defined and stored in Firestore |
+| 4+ Activities | ✅ `SplashActivity`, `LoginActivity`, `RegisterActivity`, `MainActivity`, `ConfigurationBuilderActivity`, `ConfigurationDetailActivity`, `ComponentPickerActivity` |
+| 2+ Animations | ✅ Splash screen animation, RecyclerView item animations, shared element transitions between activities |
+| Lifecycle hooks | ✅ `onResume()` in `MainActivity` refreshes configurations, `onPause()` in configuration editor saves draft state |
+| Permission resources | ✅ `INTERNET` and `ACCESS_NETWORK_STATE` permissions for Firebase connectivity |
+| System services | ✅ `NotificationService` for alerts, `ReminderService` using AlarmManager for daily reminders |
+| CRUD operations | ✅ Create, Read, Update, Delete operations on configurations in `FirestoreUtil.java` |
+| Complex queries | ✅ `getUserConfigurations()` with filters, `getConfiguration()` with security checks, component queries with sorting and filtering |
+| UI quality | ✅ Polished UI with consistent styling, intuitive workflows, and responsive feedback |
 
 ## Building the Application
 
